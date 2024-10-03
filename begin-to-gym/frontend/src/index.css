@@ -7,7 +7,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: rgb(255, 255, 255);
-  background-image: url("./public/test2.jpg");
+  background-image: url("./public/workout_background.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
