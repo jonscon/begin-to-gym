@@ -1,0 +1,30 @@
+.WorkoutDetails {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.smalltext {
+    font-style: italic;
+}
+
+.WorkoutDetails-table {
+    border-collapse: separate;
+    border-spacing: 100px 3px;
+}
+
+.WorkoutDetails-table th {
+    font-size: 18px;
+}
+
+.ExerciseLink {
+    text-decoration: none;
+    color: white;
+}
+
+.ExerciseLink:hover {
+    color: white;
+    text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.5);
+}

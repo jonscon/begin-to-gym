@@ -1,0 +1,16 @@
+.Home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.Home-mission {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 3em;
+    margin-right: 10em;
+    margin-left: 10em;
+}
+

@@ -1,0 +1,11 @@
+.ProgramList {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.ProgramList-empty {
+    text-align: center;
+}

@@ -1,0 +1,17 @@
+.ExerciseDetails {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.ExerciseDetails-body {
+    margin-right: 5em;
+    margin-left: 5em;
+}
+
+.ExerciseDetails-subheader {
+    margin-bottom: 15px;
+    margin-top: 2em;
+}
