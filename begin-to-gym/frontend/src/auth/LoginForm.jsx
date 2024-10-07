@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import LoadingSpinner from "../general/LoadingSpinner.jsx"
 import Alert from "../general/Alert";
 import "./LoginForm.css";
 
@@ -14,6 +15,7 @@ import "./LoginForm.css";
 
 function LoginForm({ login }) {
     const navigate = useNavigate();
+    const [loggedIn, setLoggedIn] = useState(true);
     const [formData, setFormData] = useState({
         username: "",
         password: "",
@@ -27,8 +29,10 @@ function LoginForm({ login }) {
 
     async function handleSubmit(e) {
         e.preventDefault();
+        setLoggedIn(false);
         let result = await login(formData);
         if (result.success) {
+            setLoggedIn(true);
             navigate("/");
         }
         else {
@@ -41,6 +45,11 @@ function LoginForm({ login }) {
     function handleChange(e) {
         const { name, value } = e.target;
         setFormData(data => ({...data, [name]: value }));
+    }
+
+    /** Show loading spinner while user is being logged in. */
+    if (!loggedIn) {
+        return <LoadingSpinner />;
     }
 
     return (

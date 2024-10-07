@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import LoadingSpinner from "../general/LoadingSpinner.jsx"
 import Alert from "../general/Alert";
 import "./SignupForm.css";
 
@@ -14,6 +15,7 @@ import "./SignupForm.css";
 
 function SignupForm({ signup }) {
     const navigate = useNavigate();
+    const [signedUp, setSignedUp] = useState(true);
     const [formData, setFormData] = useState({
         username: "",
         password: "",
@@ -30,8 +32,10 @@ function SignupForm({ signup }) {
 
      async function handleSubmit(e) {
         e.preventDefault();
+        setSignedUp(false);
         let result = await signup(formData);
         if (result.success) {
+            setSignedUp(true);
             navigate("/");
         }
         else {
@@ -43,6 +47,11 @@ function SignupForm({ signup }) {
     function handleChange(e) {
         const { name, value } = e.target;
         setFormData(data => ({...data, [name]: value }));
+    }
+
+    /** Show loading spinner while user is being logged in. */
+    if (!signedUp) {
+        return <LoadingSpinner />;
     }
 
     return (
@@ -59,7 +68,8 @@ function SignupForm({ signup }) {
                                     name="username"
                                     className="form-control"
                                     value={formData.username}
-                                    onChange={handleChange}                                    
+                                    onChange={handleChange}  
+                                    required                                  
                                 />
                             </div>
 
@@ -71,6 +81,7 @@ function SignupForm({ signup }) {
                                     className="form-control"
                                     value={formData.password}
                                     onChange={handleChange}
+                                    required
                                 />
                             </div>
 
@@ -80,7 +91,8 @@ function SignupForm({ signup }) {
                                     name="firstName"
                                     className="form-control"
                                     value={formData.firstName}
-                                    onChange={handleChange}                                    
+                                    onChange={handleChange}
+                                    required                                    
                                 />
                             </div>
 
@@ -90,7 +102,8 @@ function SignupForm({ signup }) {
                                     name="lastName"
                                     className="form-control"
                                     value={formData.lastName}
-                                    onChange={handleChange}                                    
+                                    onChange={handleChange}
+                                    required                                 
                                 />
                             </div>
 
@@ -102,6 +115,7 @@ function SignupForm({ signup }) {
                                     className="form-control"
                                     value={formData.email}
                                     onChange={handleChange}
+                                    required
                                 />
                             </div>
 

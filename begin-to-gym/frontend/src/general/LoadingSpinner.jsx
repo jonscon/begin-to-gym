@@ -1,3 +1,5 @@
+import "./LoadingSpinner.css"
+
 /** Loading message used by components while fetching data from API. */
 
 function LoadingSpinner() {
