@@ -39,6 +39,7 @@ function SignupForm({ signup }) {
             navigate("/");
         }
         else {
+            setSignedUp(true);
             setFormErrors(result.err);
         }
     }

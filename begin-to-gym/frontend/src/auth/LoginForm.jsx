@@ -36,6 +36,7 @@ function LoginForm({ login }) {
             navigate("/");
         }
         else {
+            setLoggedIn(true);
             console.log(result, formErrors.length);
             setFormErrors(result.err);
         }
