@@ -2,7 +2,7 @@
 
 ### Begin to Gym is an application designed to help beginners start their fitness journey and busy individuals who want to prioritize fitness.
 
-<!-- [Try out Begin to Gym here!]() -->
+[Try out Begin to Gym here!](https://begin-to-gym-frontend.onrender.com)
 
 ## Setup and Dependencies
 To run the project locally on your computer, please see the following steps.
